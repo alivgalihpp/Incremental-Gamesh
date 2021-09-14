@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Fungsi [Range (min, max)] ialah menjaga value agar tetap berada di antara min dan max-nya
+    
     [Range(0f, 1f)]
     public float AutoCollectPercentage = 0.1f;
     public ResourceConfig[] ResourcesConfigs;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // Fungsi untuk selalu mengeksekusi CollectPerSecond setiap detik
+        
         _collectSecond += Time.unscaledDeltaTime;
         if (_collectSecond >= 1f)
         {
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
         }
 
         output *= AutoCollectPercentage;
-        // Fungsi ToString("F1") ialah membulatkan angka menjadi desimal yang memiliki 1 angka di belakang koma
+        
         AutoCollectInfo.text = $"Auto Collect: { output.ToString("F1") } / second";
 
         AddGold(output);
@@ -168,8 +168,7 @@ public class GameManager : MonoBehaviour
     }
 }
 
-// Fungsi System.Serializable adalah agar object bisa di-serialize dan
-// value dapat di-set dari inspector
+
 [System.Serializable]
 public struct ResourceConfig
 {
